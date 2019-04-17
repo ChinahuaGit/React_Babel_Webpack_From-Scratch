@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import "./myStyles.scss";
+import { App } from "./components/App";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { cartReducer } from "./reducer";
 
-const App = () => {
-  return (
-    <div className="app">
-      <p>
-        We are a most promising species, Mr. Spock, as predators go. Did you
-        know that? I frequently have my doubts. I dont. Not any more. And maybe
-        in a thousand years or so, we will be able to prove it.
-      </p>
-      <p>- Captain Kirk</p>
-    </div>
-  );
-};
+let store = createStore(
+  cartReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
