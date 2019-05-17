@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "../../src/myStyles.scss";
+import React, { Component, Fragment } from "react";
+import ".././myStyles.scss";
 
 export class App extends Component {
   constructor(props) {
@@ -7,14 +7,14 @@ export class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <p>
+      <Fragment>
+        <span className="App">
           We are a most promising species, Mr. Spock, as predators go. Did you
           know that? I frequently have my doubts. I dont. Not any more. And
           maybe in a thousand years or so, we will be able to prove it.
-        </p>
-        <p>- Captain Kirk</p>
-      </div>
+        </span>
+        <span>- Captain Kirk</span>
+      </Fragment>
     );
   }
 }
